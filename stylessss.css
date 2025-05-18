@@ -1,0 +1,65 @@
+/* ===============  RESET / BASE  =============== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', sans-serif; color: #222; background:#fafafa; line-height:1.6; }
+img { max-width: 100%; display:block; }
+.container { width: min(92%, 1200px); margin-inline: auto; }
+.flex { display:flex; gap:2rem; }
+
+/* ===============  HEADER  =============== */
+.site-header { background:#199678; box-shadow:0 2px 4px rgba(0,0,0,.08); position:sticky; top:0; z-index:1000; }
+.logo { height:55px; }
+.main-nav { margin-left:auto; }
+.nav-toggle { display:none; background:none; border:none; font-size:1.8rem; cursor:pointer; }
+.nav-list { list-style:none; display:flex; gap:1.5rem; }
+.nav-list a { text-decoration:none; color:#006d77; font-weight:600; transition:color .2s; }
+.nav-list a:hover { color:#023047; }
+
+/* ===============  HERO  =============== */
+.hero { position:relative; }
+.hero img { width:100%; height:clamp(300px,60vh,600px); object-fit:cover; object-position:center; }
+.hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,.45); display:grid; place-content:center; text-align:center; padding-inline:1rem; }
+.hero-overlay h1 { font-size:clamp(1.8rem,3vw+1rem,3rem); color:#fff; margin-bottom:.5rem; }
+.hero-overlay p { color:#fefefe; max-width:40ch; margin-inline:auto; }
+
+/* ===============  FINDER BAR  =============== */
+.finder { background:#fff; padding:2rem 0; border-bottom:1px solid #e6e6e6; }
+.finder-form { display:grid; grid-template-columns:1fr 1fr 50px; gap:.6rem; }
+.finder-form input { padding:.9rem 1rem; border:1px solid #ccc; border-radius:4px; font-size:.95rem; }
+.finder-form button { border:none; background:#006d77; color:#fff; font-size:1.2rem; border-radius:4px; cursor:pointer; }
+.finder-form button:hover { background:#004d56; }
+
+/* ===============  CRAFT GRID (4 tiles)  =============== */
+.craft-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; padding:2rem 0; }
+.craft-tile { position:relative; overflow:hidden; border-radius:6px; }
+.craft-tile img { height:220px; object-fit:cover; transition:transform .4s; }
+.craft-tile span { position:absolute; inset:0; display:grid; place-content:center; color:#fff; background:rgba(0,0,0,.45); font-size:1.6rem; font-weight:700; letter-spacing:.02em; }
+.craft-tile:hover img { transform:scale(1.05); }
+
+/* ===============  INDIVIDUAL CRAFT SECTIONS  =============== */
+.craft-section { padding:4rem 0; }
+.craft-section.alt { background:#f0f8f9; }
+.craft-img { flex:1 1 45%; }
+.craft-content { flex:1 1 55%; }
+.craft-content h2 { font-size:2rem; color:#006d77; margin-bottom:1rem; }
+.craft-content ol, .craft-content ul { padding-left:1.2rem; display:grid; gap:.8rem; }
+.craft-content li { background:#fff; padding:.8rem 1rem; border-left:40px solid #006d77; border-radius:4px; }
+
+/* ===============  FOOTER  =============== */
+.site-footer { background:#022b3a; color:#d9d9d9; padding:2rem 0 1rem; text-align:center; }
+.footer-links { justify-content:center; flex-wrap:wrap; gap:1.5rem; margin-bottom:.8rem; }
+.footer-links a { color:#d9d9d9; text-decoration:none; font-size:.9rem; }
+.footer-links a:hover { text-decoration:underline; }
+copyright { font-size:.8rem; }
+
+/* ===============  RESPONSIVE NAV  =============== */
+@media (max-width: 768px) {
+  .nav-toggle { display:block; }
+  .nav-list { position:absolute; background:#fff; top:100%; right:0; flex-direction:column; gap:0; width:250px; transform-origin:top right; transform:scaleY(0); transition:transform .25s ease; box-shadow:-1px 3px 8px rgba(0,0,0,.1); }
+  .nav-list.open { transform:scaleY(1); }
+  .nav-list li { border-bottom:1px solid #eee; }
+  .nav-list a { display:block; padding:1rem 1.5rem; }
+  .flex { flex-direction:column; }
+  .craft-img, .craft-content { flex:1 1 100%; }
+  .craft-img { margin-bottom:1.5rem; }
+}

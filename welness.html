@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wellness Shop - Pragathi Bazaar</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0fdf4;
+      color: #1b4332;
+    }
+
+    header {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .shop-container {
+      padding: 2rem;
+    }
+
+    .shop-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #2d6a4f;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    .product-info h3 {
+      margin: 0.5rem 0;
+      color: #2d6a4f;
+    }
+
+    .product-info p {
+      font-size: 0.9rem;
+    }
+
+    .buy-btn {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buy-btn:hover {
+      background-color: #40916c;
+    }
+
+    footer {
+      background-color: #2d6a4f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Pragathi Bazaar</div>
+    <nav>
+      <a href="careerr.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="sell.html">Sell</a>
+      <a href="community.html">Community</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="shop-container">
+    <h2 class="shop-title">Explore Organic Wellness & Holistic Health</h2>
+    <div class="products">
+      <div class="product">
+        <img src="herbal.webp" alt="Herbal Tea">
+        <div class="product-info">
+          <h3>Organic Herbal Tea</h3>
+          <p>Natural blends crafted for relaxation and health benefits.</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="oil.jpeg" alt="Essential Oils">
+        <div class="product-info">
+          <h3>Therapeutic Essential Oils</h3>
+          <p>Handpicked oils for aromatherapy and holistic healing.</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Pragathi Bazaar. Empowering Women, One Product at a Time.</p>
+  </footer>
+</body>
+</html>

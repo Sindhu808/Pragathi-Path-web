@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome - Pragathi Path</title>
+  <meta http-equiv="refresh" content="3;url=careerr.html" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('WhatsApp Image 2025-05-17 at 12.18.09_e9e2de13.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .welcome-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      color: #1b4332;
+      font-size: 2rem;
+    }
+
+    p {
+      color: #2d6a4f;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-box">
+    <h1 id="welcomeText">Welcome to Pragathi Path!</h1>
+    <p>You are being redirected to the home page...</p>
+  </div>
+
+  <script>
+    const user = localStorage.getItem('username');
+    if (user) {
+      document.getElementById('welcomeText').textContent = `Welcome, ${user}!`;
+    }
+  </script>
+</body>
+</html>

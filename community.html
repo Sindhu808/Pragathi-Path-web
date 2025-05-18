@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pragathi Community</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0fdf4;
+      color: #1b4332;
+    }
+
+    header {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .community-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .community-container h2 {
+      margin-bottom: 20px;
+      color: #2d6a4f;
+    }
+
+    .post {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .post h3 {
+      margin-bottom: 5px;
+      color: #2d6a4f;
+    }
+
+    .post p {
+      margin-bottom: 10px;
+    }
+
+    .new-post {
+      margin-top: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .submit-btn:hover {
+      background-color: #40916c;
+    }
+
+    footer {
+      background-color: #2d6a4f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Pragathi Bazaar</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="sell.html">Sell</a>
+      <a href="community.html">Community</a>
+      <a href="index.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="community-container">
+    <h2>Community Forum</h2>
+
+    <!-- Example posts -->
+    <div class="post">
+      <h3>How do you market handmade jewelry?</h3>
+      <p>Looking for affordable online platforms and strategies. Any suggestions?</p>
+    </div>
+
+    <div class="post">
+      <h3>Packaging ideas for wellness products?</h3>
+      <p>Need eco-friendly and cost-effective packaging options. What do you use?</p>
+    </div>
+
+    <!-- New post form -->
+    <div class="new-post">
+      <h3>Start a Discussion</h3>
+      <form>
+        <div class="form-group">
+          <label for="title">Post Title</label>
+          <input type="text" id="title" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+
+        <button class="submit-btn" type="submit">Post</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Pragathi Bazaar. Empowering Women, One Conversation at a Time.</p>
+  </footer>
+</body>
+</html>

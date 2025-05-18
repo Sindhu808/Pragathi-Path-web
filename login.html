@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Pragathi Path</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+    }
+
+    .container {
+      background-image: url('WhatsApp Image 2025-05-17 at 12.18.09_e9e2de13.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      padding: 40px 30px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.7);
+      outline: none;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-box p {
+      margin-top: 15px;
+      color: #fff;
+    }
+
+    .login-box a {
+      color: #00f;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>Login to Pragathi Path</h2>
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button onclick="loginUser()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="toggleSignup()">Sign Up</a></p>
+    </div>
+  </div>
+
+  <script>
+    function loginUser() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username && password) {
+        localStorage.setItem('username', username);
+        window.location.href = 'welcome.html';
+      } else {
+        alert('Please enter both username and password.');
+      }
+    }
+
+    function toggleSignup() {
+      const loginBox = document.querySelector('.login-box');
+      loginBox.innerHTML = `
+        <h2>Sign Up for Pragathi Path</h2>
+        <input type="text" id="newUsername" placeholder="New Username" required />
+        <input type="password" id="newPassword" placeholder="New Password" required />
+        <button onclick="signupUser()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="toggleLogin()">Login</a></p>
+      `;
+    }
+
+    function toggleLogin() {
+      const loginBox = document.querySelector('.login-box');
+      loginBox.innerHTML = `
+        <h2>Login to Pragathi Path</h2>
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button onclick="loginUser()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="toggleSignup()">Sign Up</a></p>
+      `;
+    }
+
+    function signupUser() {
+      const newUsername = document.getElementById('newUsername').value;
+      const newPassword = document.getElementById('newPassword').value;
+
+      if (newUsername && newPassword) {
+        localStorage.setItem('username', newUsername);
+        alert('Sign up successful! Redirecting to login...');
+        toggleLogin();
+      } else {
+        alert('Please enter both username and password.');
+      }
+    }
+  </script>
+</body>
+</html>

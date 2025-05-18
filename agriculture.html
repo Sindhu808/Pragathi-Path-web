@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agriculture Career Guide - Pragathi Path</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #d8f3dc, #ffffff);
+      color: #1b4332;
+    }
+
+    header {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section, .form-section {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h2, .form-section h3 {
+      color: #2d6a4f;
+      margin-top: 0;
+    }
+
+    label, select, input, button {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      display: block;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .result, .career-info {
+      margin-top: 1rem;
+      background-color: #e9f5ec;
+      padding: 1rem;
+      border-left: 4px solid #2d6a4f;
+      border-radius: 5px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    iframe {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 600px;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #2d6a4f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Pragathi Path</div>
+    <nav>
+      <a href="careerr.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="mentor.html">Mentors</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Career Opportunities in Agriculture</h2>
+      <p>Explore personalized agriculture careers for rural women, based on your region, soil, and climate. Make informed decisions and watch video guides from successful women in agriculture.</p>
+    </section>
+
+    <section class="form-section">
+      <h3>Select Your Region, Soil Type, and Climate</h3>
+      <label for="region">Region:</label>
+      <select id="region">
+        <option value="">--Select Region--</option>
+        <option value="South">South</option>
+        <option value="North">North</option>
+        <option value="East">East</option>
+        <option value="West">West</option>
+      </select>
+
+      <label for="soil">Soil Type:</label>
+      <select id="soil">
+        <option value="">--Select Soil--</option>
+        <option value="Black">Black Soil</option>
+        <option value="Red">Red Soil</option>
+        <option value="Alluvial">Alluvial Soil</option>
+        <option value="Laterite">Laterite Soil</option>
+      </select>
+
+      <label for="climate">Climate:</label>
+      <select id="climate">
+        <option value="">--Select Climate--</option>
+        <option value="Tropical">Tropical</option>
+        <option value="Dry">Dry</option>
+        <option value="Temperate">Temperate</option>
+      </select>
+
+      <div class="result" id="resultBox">Select your region, soil, and climate to view suggested careers.</div>
+    </section>
+
+    <section class="form-section hidden" id="careerSelection">
+      <h3>Select a Suggested Career</h3>
+      <select id="career">
+        <option value="">--Choose Career--</option>
+      </select>
+    </section>
+
+    <section class="career-info hidden" id="careerInfo">
+      <h3 id="careerTitle"></h3>
+      <p id="careerDescription"></p>
+      <h4>Career Roadmap</h4>
+      <p id="careerRoadmap">To pursue a career in this field, women should begin with fundamental knowledge through government agriculture training programs, followed by gaining hands-on experience through internships or working on local farms. Next, certifications in specific domains like organic farming, seed processing, or livestock management add credibility. Once confident, starting small-scale ventures using available land or collaborating with other women in the region helps in managing risk. Government schemes, microfinance, and NGOs can offer financial and technical assistance. As the venture grows, they can explore branding, value addition, and marketing via digital platforms to increase their income and reach wider markets. Community engagement, continuous learning, and networking with experts through mentorship programs ensure long-term success.</p>
+      <h4>Guidance Video</h4>
+      <iframe id="careerVideo" src="" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Pragathi Path. Empowering Rural Women in Agriculture.
+  </footer>
+
+  <script>
+    const regionSelect = document.getElementById('region');
+    const soilSelect = document.getElementById('soil');
+    const climateSelect = document.getElementById('climate');
+    const resultBox = document.getElementById('resultBox');
+    const careerSelection = document.getElementById('careerSelection');
+    const careerDropdown = document.getElementById('career');
+    const careerInfo = document.getElementById('careerInfo');
+    const careerTitle = document.getElementById('careerTitle');
+    const careerDescription = document.getElementById('careerDescription');
+    const careerRoadmap = document.getElementById('careerRoadmap');
+    const careerSteps = document.getElementById('careerSteps');
+    const careerVideo = document.getElementById('careerVideo');
+
+    const guidance = {
+      'South-Black-Tropical': ['Organic Farming', 'Agri-Business'],
+      'North-Alluvial-Temperate': ['Dairy Farming', 'Crop Advisor'],
+      'East-Red-Dry': ['Horticulture', 'Seed Specialist'],
+      'West-Laterite-Tropical': ['Spice Cultivation', 'Soil Scientist']
+    };
+
+    const careerDetails = {
+      'Organic Farming': {
+        description: 'Grow chemical-free produce and promote healthy living.',
+        //video: 'https://www.youtube.com/results?search_query=organic+farming'
+      },
+      'Agri-Business': {
+        description: 'Build a business around agri products like compost, fertilizers, tools.',
+        video: 'https://www.youtube.com/results?search_query=Agri-Business'
+            },
+      'Dairy Farming': {
+        description: 'Manage milk-producing livestock for steady income.',
+        video: 'https://www.youtube.com/results?search_query=%27Dairy+Farming%27'
+      },
+      'Crop Advisor': {
+        description: 'Guide farmers on crop planning, rotation, and pest control.',
+        video: 'https://www.youtube.com/results?search_query=Crop+Advisor'
+      },
+      'Horticulture': {
+        description: 'Grow fruits, flowers, or vegetables for commercial purposes.',
+        video: 'https://www.youtube.com/results?search_query=Horticulture'
+      },
+      'Seed Specialist': {
+        description: 'Develop and distribute high-quality seeds.',
+        video: 'https://www.youtube.com/results?search_query=Seed+Specialist%27'
+      },
+      'Spice Cultivation': {
+        description: 'Grow spices like cardamom, black pepper, turmeric.',
+        video: 'https://www.youtube.com/results?search_query=Spice+Cultivation'
+      },
+      'Soil Scientist': {
+        description: 'Analyze soil for better farming techniques and sustainability.',
+        video: 'https://www.youtube.com/results?search_query=Soil+Scientist'
+      }
+    };
+
+    function updateSuggestions() {
+      const key = `${regionSelect.value}-${soilSelect.value}-${climateSelect.value}`;
+      const careers = guidance[key];
+      if (careers) {
+        resultBox.innerHTML = `<strong>Suggested Careers:</strong> ${careers.join(', ')}`;
+        careerSelection.classList.remove('hidden');
+        careerDropdown.innerHTML = '<option value="">--Choose Career--</option>' + careers.map(c => `<option value="${c}">${c}</option>`).join('');
+      } else {
+        resultBox.innerHTML = 'No career suggestions found for selected inputs.';
+        careerSelection.classList.add('hidden');
+        careerInfo.classList.add('hidden');
+      }
+    }
+
+    function showCareerInfo() {
+      const career = careerDropdown.value;
+      const info = careerDetails[career];
+      if (info) {
+        careerInfo.classList.remove('hidden');
+        careerTitle.textContent = career;
+        careerDescription.textContent = info.description;
+        careerVideo.src = info.video;
+      } else {
+        careerInfo.classList.add('hidden');
+      }
+    }
+
+    regionSelect.addEventListener('change', updateSuggestions);
+    soilSelect.addEventListener('change', updateSuggestions);
+    climateSelect.addEventListener('change', updateSuggestions);
+    careerDropdown.addEventListener('change', showCareerInfo);
+  </script>
+</body>
+</html>
+

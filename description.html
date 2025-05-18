@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Description</title>
+  <link rel="stylesheet" href="career.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="job-title"></h1>
+    <div id="description-content"></div>
+    <button onclick="window.history.back()" style="margin-top:30px;">Back</button>
+  </div>
+  <h3>Watch a Video Guid:</h3>
+  <iframe width="560" height="315"
+  src="https://www.youtube.com/embed/Ro3FFwFrlUk"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerater;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+  allowfullscreen>
+</iframe>
+  <script>
+    // Job descriptions
+    const descriptions = {
+      "Sericulture":[
+    "Prepare Mulberry Garden: Plant mulberry cuttings or seeds in well-prepared soil. Prune regularly to encourage new leaf growth. Harvest leaves in the morning and keep them fresh by covering with a wet cloth during transport and storage.",
+    "Purchase Healthy Silkworm Eggs: Buy from a reputable breeder or government sericulture department. Eggs should be healthy and disease-free, and suitable for your region's climate.",
+    "Incubate and Hatch Silkworm Eggs: Keep eggs in a clean, controlled environment until they hatch (about 10–14 days). Eggs hatch into larvae (caterpillars), which are then ready for feeding.",
+    "Rear Silkworms (Feeding and Care): Feed fresh, clean mulberry leaves several times a day. Use leaves from 55–65 day-old shoots for late-stage silkworms. Maintain temperature (22–24°C) and humidity (60–65%) in the rearing room. Silkworms molt four times over 4–6 weeks. Increase leaf quantity as they grow.",
+    "Mounting for Cocoon Formation: After the 5th instar (about 6 weeks), silkworms stop eating and search for a place to spin cocoons. Collect mature larvae and place them on mountages. Avoid overcrowding.",
+    "Harvesting Cocoons: Cocoons are ready to harvest 6 days after mounting. Harvest during cool hours. Gently remove cocoons from mountages. Remove defective cocoons and grade by size and quality.",
+    "Post-Harvest Cocoon Handling: Kill the pupa inside the cocoon by heating (boiling or oven-drying) before it breaks the silk thread. Pack cocoons loosely in netted bags and transport during cool hours.",
+    "Silk Reeling (Optional): Cook cocoons in hot water to soften sericin. Brush and unwind silk filaments onto reels. Further steps include re-reeling, twisting, dyeing, and weaving.",
+    "Quick Tips: Maintain cleanliness and hygiene. Monitor temperature and humidity. Use only fresh, clean mulberry leaves. Avoid overcrowding. Join local sericulture training or government programs."
+  ],
+     
+  
+   
+  // ...other jobs
+}; 
+    
+
+const params = new URLSearchParams(window.location.search);
+const job = params.get('job');
+const jobTitle = document.getElementById('job-title');
+const descriptionDiv = document.getElementById('description-content');
+
+jobTitle.textContent = job;
+
+if (descriptions[job]) {
+  descriptionDiv.innerHTML = '';
+  const ul = document.createElement('ul');
+  descriptions[job].forEach(point => {
+    const li = document.createElement('li');
+    li.textContent = point;
+    ul.appendChild(li);
+  });
+  descriptionDiv.appendChild(ul);
+} else {
+  descriptionDiv.textContent = "Description not available.";
+}
+
+  </script>
+</body>
+</html>

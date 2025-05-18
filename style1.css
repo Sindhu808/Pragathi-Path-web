@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.header {
+  background: #036666;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+.career-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.career-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.career-content {
+  flex: 2;
+  padding: 20px;
+}
+
+.career-content h2 {
+  color: #036666;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.career-content ol {
+  margin-left: 20px;
+}
+
+.career-content li {
+  margin-bottom: 10px;
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .career-section {
+    flex-direction: column;
+  }
+
+  .career-content {
+    padding: 10px;
+  }
+
+  .career-content h2 {
+    font-size: 1.3rem;
+  }
+}

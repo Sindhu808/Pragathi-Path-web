@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fashion Shop - Pragathi Bazaar</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0fdf4;
+      color: #1b4332;
+    }
+
+    header {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .shop-container {
+      padding: 2rem;
+    }
+
+    .shop-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #2d6a4f;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    .product-info h3 {
+      margin: 0.5rem 0;
+      color: #2d6a4f;
+    }
+
+    .product-info p {
+      font-size: 0.9rem;
+    }
+
+    .buy-btn {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buy-btn:hover {
+      background-color: #40916c;
+    }
+
+    .mentor-container {
+      background-color: #e6f4ea;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .mentor-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2d6a4f;
+    }
+
+    .mentor-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .mentor-card {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .mentor-card h4 {
+      margin-bottom: 0.5rem;
+      color: #2d6a4f;
+    }
+
+    .mentor-card p {
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .mentor-btn {
+      margin-top: 1rem;
+      background-color: #2d6a4f;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .mentor-btn:hover {
+      background-color: #40916c;
+    }
+
+    footer {
+      background-color: #2d6a4f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .connect-modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .connect-modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #2d6a4f;
+    }
+
+    .connect-modal-content h3 {
+      margin-bottom: 1rem;
+      color: #2d6a4f;
+    }
+
+    .connect-modal-content input,
+    .connect-modal-content textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .connect-modal-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2d6a4f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Pragathi Bazaar</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Sell</a>
+      <a href="#">Community</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <section class="shop-container">
+    <h2 class="shop-title">Explore Traditional Wear & Handmade Fashion</h2>
+    <div class="products">
+      <!-- Sample Product -->
+      <div class="product">
+        <img src="saree.jpeg" alt="Saree 1">
+        <div class="product-info">
+          <h3>Handwoven Cotton Saree</h3>
+          <p>Eco-friendly and beautifully crafted by rural artisans.</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+      <!-- Additional products would go here -->
+    </div>
+  </section>
+
+  <section class="mentor-container">
+    <h2 class="mentor-title">Connect with Mentors</h2>
+    <div class="mentor-list">
+      <div class="mentor-card">
+        <h4>Radha Kumari</h4>
+        <p>Entrepreneur & Handloom Expert with 10+ years of experience.</p>
+        <button class="mentor-btn" onclick="openForm('Radha Kumari')">Connect</button>
+      </div>
+      <div class="mentor-card">
+        <h4>Anjali Desai</h4>
+        <p>Fashion Designer and Community Mentor.</p>
+        <button class="mentor-btn" onclick="openForm('Anjali Desai')">Connect</button>
+      </div>
+      <div class="mentor-card">
+        <h4>Savitri Devi</h4>
+        <p>Organic Farming & Rural Development Coach.</p>
+        <button class="mentor-btn" onclick="openForm('Savitri Devi')">Connect</button>
+      </div>
+    </div>
+  </section>
+  <!-- WhatsApp Floating Icon -->
+<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
+</a>
+
+
+  <!-- Mentor Contact Modal -->
+  <div id="mentorForm" class="connect-modal">
+    <div class="connect-modal-content">
+      <span class="close-btn" onclick="closeForm()">&times;</span>
+      <h3>Connect with <span id="mentorName">Mentor</span></h3>
+      <form id="connectForm">
+        <input type="text" id="userName" name="userName" placeholder="Your Name" required>
+        <input type="text" id="careerInterest" name="careerInterest" placeholder="Career Interest" required>
+        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Request</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Pragathi Bazaar. Empowering Women, One Product at a Time.</p>
+  </footer>
+
+  <script>
+    function openForm(mentorName) {
+      document.getElementById("mentorForm").style.display = "block";
+      document.getElementById("mentorName").textContent = mentorName;
+    }
+
+    function closeForm() {
+      document.getElementById("mentorForm").style.display = "none";
+    }
+
+    document.getElementById("connectForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Your request has been sent to the mentor!");
+      closeForm();
+      this.reset();
+    });
+  </script>
+</body>
+</html>

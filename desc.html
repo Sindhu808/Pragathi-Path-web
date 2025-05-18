@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Description</title>
+    <link rel="stylesheet" href="career.css">
+</head>
+<body>
+    <div class="container">
+        <div class="job-title">
+            <h1>Sericulture Harvesting</h1>
+        </div>
+        <div class="description-history">
+            <button onclick="window.history.back()" style="margin-top:30px;">&lt; Back</button>
+        </div>
+        <div>
+            <h3>Watch a Video Guide</h3>
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/Ed1FmTSQS2Q"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+        <div id="jobDescriptions">
+            <h2>Step-By-Step Guid</h2>
+            <div id="jobList">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        const jobDescriptionsText = `
+Prepare Mulberry Garden: Plant mulberry cuttings or seeds in well-prepared soil. Prune regularly to encourage leaf growth.
+Purchase Healthy Silkworm Eggs: Buy from a reputable breeder or government sericulture department. Eggs should be disease-free.
+Incubate and Hatch Silkworm Eggs: Keep eggs in a clean, controlled environment until they hatch (about 10-12 days).
+Rear Silkworms (Feeding and Care): Feed fresh, clean mulberry leaves several times a day. Use leaves from 5th instar onwards.
+Mounting for Cocoon Formation: After the 5th instar (about 6 weeks), silkworms stop eating and search for a place to spin cocoons. Provide 'mountages'.
+Harvesting Cocoons: Cocoons are ready to harvest 6 days after mounting. Harvest during cool hours. Gently remove cocoons without damaging the pupae.
+Post-Harvest Cocoon Handling: Kill the pupa inside the cocoon by heating (boiling or oven-drying) before reeling to prevent moth emergence.
+Silk Reeling (Optional): Cook cocoons in hot water to soften sericin. Reel the continuous silk filaments onto reels.
+Quick Tips: Maintain cleanliness and hygiene. Monitor temperature and humidity. Use only fresh, clean mulberry leaves.
+        `;
+
+
+        const descriptionsArray = jobDescriptionsText.trim().split('\n');
+        const jobListContainer = document.getElementById('jobList');
+
+        descriptionsArray.forEach(description => {
+            const listItem = document.createElement('li');
+            listItem.textContent = description.trim();
+            jobListContainer.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

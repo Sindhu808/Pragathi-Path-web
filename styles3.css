@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #fdfdfd;
+  color: #070707;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #199678;
+  color: white;
+}
+
+.logo {
+  height: 60px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.banner {
+  background: url('./background.webp') no-repeat center center/cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.banner-text {
+  position: relative;
+  z-index: 2;
+}
+
+.banner h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1.2rem;
+}
+
+.career-section {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.career-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.career-content {
+  flex: 1;
+}
